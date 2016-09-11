@@ -1,0 +1,15 @@
+diff -Naur v0.4/src/display/device/PangolinNSGLView.mm patch/src/display/device/PangolinNSGLView.mm
+--- v0.4/src/display/device/PangolinNSGLView.mm	2016-08-08 21:56:24.000000000 -0700
++++ patch/src/display/device/PangolinNSGLView.mm	2016-09-10 21:50:12.000000000 -0700
+@@ -77,6 +77,11 @@
+ #endif
+         backing_scale = 1.0;
+
++    // This method may be called from a separate (Core Animation) thread, so the thread-local pangolin::context may be
++    // uninitialized.
++    if (pangolin::context == 0) {
++        pangolin::context = context;
++    }
+     pangolin::process::Resize(self.bounds.size.width * backing_scale, self.bounds.size.height * backing_scale);
+
+     [[self openGLContext] update];

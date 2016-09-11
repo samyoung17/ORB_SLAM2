@@ -176,3 +176,4 @@ g2o/stuff/string_tools.cpp
 g2o/stuff/property.cpp       
 g2o/stuff/property.h       
 )
+target_compile_features(g2o PRIVATE cxx_range_for)
