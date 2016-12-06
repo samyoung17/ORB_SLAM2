@@ -38,6 +38,7 @@ ExternalProject_add(ep_opencv
         "-DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>"
         "-DCMAKE_PREFIX_PATH=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ep_eigen"
         -DWITH_CUDA=OFF
+        -DWITH_FFMPEG=OFF
     DEPENDS ep_eigen
 )
 
