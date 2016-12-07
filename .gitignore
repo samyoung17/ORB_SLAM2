@@ -8,3 +8,5 @@ target/
 
 # Meta data of macOS Finder.app
 .DS_Store
+
+*.dylib
